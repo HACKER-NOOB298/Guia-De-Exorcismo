@@ -1,0 +1,6 @@
+git clone https://github.com/HACKER-NOOB298/Um-Teste.git
+cd Um-Teste
+# Cole os arquivos nos arquivos HTML, CSS, JS
+git add .
+git commit -m "Add Exorcism Complete Guide website"
+git push origin main
