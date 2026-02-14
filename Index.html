@@ -12,8 +12,10 @@
         <div class="header-content">
             <div class="logo">
                 <span class="logo-icon">✝️</span>
-                <h1>Exorcismo</h1>
-                <p class="subtitle">Guia Completo</p>
+                <div class="logo-text">
+                    <h1>Exorcismo</h1>
+                    <p class="subtitle">Guia Completo</p>
+                </div>
             </div>
             <nav class="nav-menu">
                 <button class="nav-btn active" data-section="home">Início</button>
@@ -22,6 +24,7 @@
                 <button class="nav-btn" data-section="oracoes">Orações</button>
                 <button class="nav-btn" data-section="historia">História</button>
                 <button class="nav-btn" data-section="protecao">Proteção</button>
+                <button class="nav-btn" data-section="faq">FAQ</button>
             </nav>
         </div>
     </header>
@@ -38,41 +41,60 @@
                 </div>
 
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="openSection('definicao')">
                         <div class="feature-icon">📖</div>
                         <h3>Definições</h3>
                         <p>Compreenda o significado e os princípios do exorcismo</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="openSection('rituais')">
                         <div class="feature-icon">⛪</div>
                         <h3>Rituais Oficiais</h3>
                         <p>Procedimentos tradicionais da Igreja Católica</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="openSection('oracoes')">
                         <div class="feature-icon">🙏</div>
                         <h3>Orações Sagradas</h3>
                         <p>Preces utilizadas em exorcismos e proteção</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="openSection('protecao')">
                         <div class="feature-icon">🛡️</div>
                         <h3>Proteção Espiritual</h3>
                         <p>Métodos de proteção e fortalecimento espiritual</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card" onclick="openSection('historia')">
                         <div class="feature-icon">📚</div>
                         <h3>Conhecimento Histórico</h3>
                         <p>Origem e evolução das práticas de exorcismo</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">✨</div>
-                        <h3>Instruções Práticas</h3>
-                        <p>Guia passo a passo para práticas seguras</p>
+                    <div class="feature-card" onclick="openSection('faq')">
+                        <div class="feature-icon">❓</div>
+                        <h3>Perguntas Frequentes</h3>
+                        <p>Dúvidas comuns respondidas</p>
                     </div>
                 </div>
 
                 <div class="info-box">
                     <h3>⚠️ Aviso Importante</h3>
                     <p>O exorcismo é uma prática religiosa da Igreja Católica. Este guia é apenas informativo e educacional. Para casos reais, sempre consulte um sacerdote ou bispo autorizado pela Igreja.</p>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Seções Principais</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Orações e Rituais</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2000+</div>
+                        <div class="stat-label">Anos de Tradição</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Gratuito</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -106,6 +128,32 @@
                 <div class="content-box">
                     <h3>Distinção Importante</h3>
                     <p>É importante diferenciar entre possessão demoníaca real e condições médicas ou psicológicas. A Igreja recomenda que toda possível possessão seja primeiro avaliada por profissionais de saúde mental antes de se considerar um exorcismo.</p>
+                </div>
+
+                <div class="comparison-box">
+                    <h3>Possessão Demoníaca vs. Condições Médicas</h3>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Possessão Demoníaca</th>
+                            <th>Condições Médicas</th>
+                        </tr>
+                        <tr>
+                            <td>Aversão extrema a símbolos sagrados</td>
+                            <td>Relacionadas a condições neurológicas</td>
+                        </tr>
+                        <tr>
+                            <td>Conhecimento de fatos desconhecidos</td>
+                            <td>Memória ou cognição alterada</td>
+                        </tr>
+                        <tr>
+                            <td>Força sobrenatural</td>
+                            <td>Força aumentada por adrenalina</td>
+                        </tr>
+                        <tr>
+                            <td>Mudança completa de personalidade</td>
+                            <td>Mudanças comportamentais graduais</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </section>
@@ -206,6 +254,11 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="info-box">
+                    <h3>📋 Documentação Oficial</h3>
+                    <p>O ritual oficial é baseado no Rituale Romanum, publicado pela Igreja Católica. Este documento contém todas as orações e procedimentos autorizados para exorcismos legítimos.</p>
+                </div>
             </div>
         </section>
 
@@ -214,46 +267,67 @@
             <div class="section-content">
                 <h2>Orações Sagradas</h2>
 
-                <div class="prayer-card">
+                <div class="prayer-tabs">
+                    <button class="prayer-tab-btn active" onclick="filterPrayers('todas')">Todas</button>
+                    <button class="prayer-tab-btn" onclick="filterPrayers('protecao')">Proteção</button>
+                    <button class="prayer-tab-btn" onclick="filterPrayers('libertacao')">Libertação</button>
+                    <button class="prayer-tab-btn" onclick="filterPrayers('tradicional')">Tradicionais</button>
+                </div>
+
+                <div class="prayer-card" data-category="tradicional">
                     <h3>Oração do Pai Nosso</h3>
                     <div class="prayer-text">
                         <p>Pai nosso que estais nos céus, santificado seja o vosso nome. Venha a nós o vosso reino. Seja feita a vossa vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje. Perdoai-nos as nossas dívidas, assim como perdoamos aos nossos devedores. E não nos deixeis cair em tentação, mas livrai-nos do mal. Amém.</p>
                     </div>
+                    <button class="copy-btn" onclick="copyPrayer(this)">📋 Copiar</button>
                 </div>
 
-                <div class="prayer-card">
+                <div class="prayer-card" data-category="protecao">
                     <h3>Oração de São Miguel Arcanjo</h3>
                     <div class="prayer-text">
                         <p>São Miguel Arcanjo, defendei-nos na luta. Sedes o protetor nosso contra a perversidade e as ciladas do demônio. Ordene-lhe Deus, suplicamos humildemente; e vós, Príncipe da milícia celeste, com a força que Deus vos confiou, precipitai no inferno a Satanás e aos outros espíritos maus que andam pelo mundo para perdição das almas. Amém.</p>
                     </div>
+                    <button class="copy-btn" onclick="copyPrayer(this)">📋 Copiar</button>
                 </div>
 
-                <div class="prayer-card">
+                <div class="prayer-card" data-category="protecao">
                     <h3>Oração de Proteção Espiritual</h3>
                     <div class="prayer-text">
-                        <p>Senhor Jesus Cristo, Filho de Deus vivo, que derramaste teu sangue precioso para a redenção dos nossos pecados, te suplico que me protejas contra as forças malignas. Revesti-me com a armadura de Deus: a courassa da justiça, o escudo da fé e o capacete da salvação. Que o sangue precioso de Cristo crie uma barreira de proteção ao meu redor. Que os anjos de Deus me guardem e protejam em todos os momentos. Amém.</p>
+                        <p>Senhor Jesus Cristo, Filho de Deus vivo, que derramaste teu sangue precioso para a redenção dos nossos pecados, te suplico que me protejas contra as forças malignas. Revisti-me com a armadura de Deus: a courassa da justiça, o escudo da fé e o capacete da salvação. Que o sangue precioso de Cristo crie uma barreira de proteção ao meu redor. Que os anjos de Deus me guardem e protejam em todos os momentos. Amém.</p>
                     </div>
+                    <button class="copy-btn" onclick="copyPrayer(this)">📋 Copiar</button>
                 </div>
 
-                <div class="prayer-card">
+                <div class="prayer-card" data-category="tradicional">
                     <h3>Ave Maria</h3>
                     <div class="prayer-text">
                         <p>Ave Maria, cheia de graça, o Senhor é convosco. Bendita sois vós entre as mulheres, e bendito é o fruto do vosso ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós pecadores, agora e na hora da nossa morte. Amém.</p>
                     </div>
+                    <button class="copy-btn" onclick="copyPrayer(this)">📋 Copiar</button>
                 </div>
 
-                <div class="prayer-card">
+                <div class="prayer-card" data-category="libertacao">
                     <h3>Oração de Libertação</h3>
                     <div class="prayer-text">
                         <p>Em nome do Pai, e do Filho, e do Espírito Santo, ordeno: Espírito imundo, em virtude da autoridade que me foi confiada através de Cristo, sai desta criatura de Deus. Que a luz de Cristo te expulse para as trevas. Que a paz de Deus substitua tua presença maligna. Que a graça divina restaure este lugar sagrado. Amém.</p>
                     </div>
+                    <button class="copy-btn" onclick="copyPrayer(this)">📋 Copiar</button>
                 </div>
 
-                <div class="prayer-card">
+                <div class="prayer-card" data-category="tradicional">
                     <h3>Salmo 23 - O Senhor é Meu Pastor</h3>
                     <div class="prayer-text">
                         <p>O Senhor é meu pastor, nada me faltará. Em prados verdejantes ele me faz repousar, leva-me para junto das águas tranquilas. Restaura-me o vigor, guia-me pelas veredas da justiça, por amor do seu nome. Mesmo quando eu andar por um vale de sombras e morte, não temerei mal algum, pois vós estais comigo; a vossa vara e o vosso cajado me consolam. Preparais uma mesa perante mim na presença dos meus inimigos; ungis a minha cabeça com óleo, meu cálice transborda. A vossa bondade e misericórdia hão de acompanhar-me todos os dias da minha vida, e habitarei na casa do Senhor para sempre. Amém.</p>
                     </div>
+                    <button class="copy-btn" onclick="copyPrayer(this)">📋 Copiar</button>
+                </div>
+
+                <div class="prayer-card" data-category="protecao">
+                    <h3>Oração da Armadura de Deus</h3>
+                    <div class="prayer-text">
+                        <p>Revestei-vos de toda a armadura de Deus, para que possais fazer frente às ciladas do diabo. Porque a nossa luta não é contra a carne e o sangue, mas contra os Principados, contra as Potestades, contra os Dominadores deste mundo tenebroso, contra os Espíritos do mal distribuídos nos ares. Tomai, pois, a armadura de Deus, para que possais resistir no dia mau e, depois de tudo, ficardes de pé. Amém.</p>
+                    </div>
+                    <button class="copy-btn" onclick="copyPrayer(this)">📋 Copiar</button>
                 </div>
             </div>
         </section>
@@ -441,6 +515,95 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="section-content">
+                <h2>Perguntas Frequentes (FAQ)</h2>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>❓ Como sei se alguém está possuído?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Os sinais podem incluir aversão extrema a símbolos sagrados, conhecimento de fatos desconhecidos, força anormalmente aumentada, e mudança completa de personalidade. No entanto, muitos desses sintomas podem ter explicações médicas ou psicológicas. É essencial consultar profissionais de saúde primeiro.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>❓ Qualquer pessoa pode fazer um exorcismo?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Não. Apenas sacerdotes católicos autorizados pelo bispo podem realizar exorcismos oficiais. A Igreja estabelece critérios rigorosos e treinamento específico para quem pode exercer essa função.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>❓ O exorcismo funciona sempre?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>A eficácia do exorcismo depende de vários fatores, incluindo a fé, a preparação espiritual e a cooperação da pessoa afetada. Alguns casos podem exigir múltiplos exorcismos ou acompanhamento espiritual prolongado.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>❓ Existe exorcismo protestante?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Embora a prática formal de exorcismo seja mais associada à Igreja Católica, algumas igrejas protestantes reconhecem a possibilidade de possessão demoníaca e realizam práticas de deliverance (libertação), embora com procedimentos diferentes.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>❓ O que fazer se acho que estou possuído?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Procure um médico ou psicólogo primeiro para descartar condições médicas. Se após isso suspeitar que é um caso espiritual, procure seu pároco ou bispo. Eles avaliarão se é necessário um exorcismo e como proceder.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>❓ Orações de proteção funcionam?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Segundo a tradição cristã, as orações sinceras oferecem proteção espiritual. A eficácia depende da fé, intenção e perseverança na prática espiritual. Muitos fiéis relatam experiências positivas.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>❓ Qual é a diferença entre possessão e opressão?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Possessão é quando uma entidade maligna controla o corpo e mente da pessoa. Opressão é quando há influência negativa sem controle total. Ambas requerem atenção espiritual, mas os tratamentos podem variar.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>❓ Como posso aprender mais sobre exorcismo?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Este guia oferece informações básicas. Para aprender mais, consulte livros sobre teologia católica, converse com padres especializados, ou pesquise documentos oficiais da Igreja Católica sobre o tema.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -449,9 +612,10 @@
             <p>&copy; 2026 Guia Completo de Exorcismo. Todos os direitos reservados.</p>
             <p style="margin-top: 10px; font-size: 0.9em;">Este guia é apenas informativo e educacional. Para práticas reais, sempre consulte um sacerdote autorizado pela Igreja Católica.</p>
             <p style="margin-top: 10px; color: #888;">Desenvolvido com devoção e fé cristã</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">Última atualização: 14 de Fevereiro de 2026</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-  </html>
+</html>
